@@ -44,17 +44,17 @@ RUN dnf -y update && \
 # Install typescript language server and pyright
 RUN npm i -g typescript
 
+# Add nodejs dependency for coc
+RUN dnf -y update && \
+    dnf -y install yarnpkg  && \
+    dnf clean all
+
 # Install the defaults.nvim dependencies, INSTALL env var is a hack
 RUN INSTALL=1 nvim --headless +'autocmd User PackerComplete sleep 100m | qall' +PackerSync
 
 # Install rust
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
 
-# Install sumneko
-# Add nodejs dependency for servers
-RUN dnf -y update && \
-    dnf -y install yarnpkg  && \
-    dnf clean all
 # Download example codebases for TypeScript, Python, and Rust (neovim covers C and lua)
 RUN cd /examples && \
     git clone https://github.com/typescript-language-server/typescript-language-server.git && \
