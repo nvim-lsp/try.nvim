@@ -31,7 +31,7 @@ vim.wo.signcolumn = 'yes'
 vim.lsp.set_log_level("debug")
 require('vim.lsp.log').set_format_func(vim.inspect)
 -- Example custom server
-local sumneko_root_path = vim.fn.getenv 'HOME' .. '/.local/bin/sumneko_lua' -- Change to your sumneko root installation
+local sumneko_root_path = vim.fn.getenv 'HOME' .. '/.local/bin/lua-language-server' -- Change to your sumneko root installation
 local sumneko_binary = sumneko_root_path .. '/bin/Linux/lua-language-server'
 
 -- Make runtime files discoverable to the server
