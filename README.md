@@ -7,9 +7,12 @@ try.nvim is repository that contains various example self-contained neovim conta
 1. Ensure you have installed a container runtime such as podman (recommended) or Docker. See below for details.
 2. To launch any of the containers run the following
   ```bash
-  podman run --rm -it docker.io/mjlbach/try.nvim:slim
+  podman run --rm -it quay.io/nvim-lsp/try.nvim:nightly-lua
   ```
   
+### Available containers
+Please see the nvim-lsp organization on quay for a list of [available tags](https://quay.io/repository/nvim-lsp/try.nvim?tab=tags). Generally, the containers follow the schema ${release}-${language} where release is either nightly or stable (neovim builds) and language is the name of the language tooling provided in the container.
+
 ### Installing podman
 
 On Fedora/RHEL systems, podman should should pre-installed. Otherwise:
