@@ -1,4 +1,4 @@
-ARG TAG=base-stable
+ARG TAG=base-nightly
 FROM try.nvim:$TAG
 
 # To support kickstart.nvim

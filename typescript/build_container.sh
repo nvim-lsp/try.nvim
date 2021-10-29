@@ -1,2 +1,2 @@
-podman build -t try.nvim:stable-typescript .
-podman build -t try.nvim:nightly-typescript --build-arg VERSION=base-nightly .
+podman build -t try.nvim:stable-typescript --build-arg TAG=base-stable .
+podman build -t try.nvim:nightly-typescript .

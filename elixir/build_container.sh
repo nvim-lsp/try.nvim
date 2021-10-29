@@ -1,2 +1,2 @@
-podman build -t try.nvim:stable-elixir .
-podman build -t try.nvim:nightly-elixir --build-arg VERSION=base-nightly .
+podman build -t try.nvim:stable-elixir --build-arg TAG=base-stable .
+podman build -t try.nvim:nightly-elixir .

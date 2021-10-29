@@ -1,2 +1,2 @@
-podman build -t try.nvim:stable-rust .
-podman build -t try.nvim:nightly-rust --build-arg VERSION=base-nightly .
+podman build -t try.nvim:stable-rust --build-arg TAG=base-stable .
+podman build -t try.nvim:nightly-rust .
