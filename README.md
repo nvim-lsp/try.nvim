@@ -30,7 +30,16 @@ On Arch:
 pacman -Syuu podman
 ```
 
-For other linux distributions, please consult the package repositories.
+On macOS:
+```
+brew install podman
+
+# On macOS, podman must start a QEMU instance
+podman machine init
+podman machine start
+```
+
+For other linux distributions, please consult the package repositories. For Windows, use Docker.
 
 ### Containers
 
