@@ -20,7 +20,7 @@ jobs:
     name: Push image to quay
     runs-on: ubuntu-latest
     steps:
-
+      - uses: actions/checkout@v2
       - name: Log in to quay.io
         uses: redhat-actions/podman-login@v1
         with:
