@@ -34,8 +34,11 @@ On macOS:
 ```
 brew install podman
 
-# On macOS, podman must start a QEMU instance
+
+# Required on macOS to initialize QEMU VM. Only required once.
 podman machine init
+
+# Must be done each restart.
 podman machine start
 ```
 
