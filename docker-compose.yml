@@ -3,7 +3,7 @@ version: "3.7"
 services:
 
   base-stable:
-    image: quay.io/nvim-lsp/try.nvim:base-stable
+    image: ${REGISTRY}/${REPO}:base-stable
     build:
       context: ./base
       dockerfile: Dockerfile
@@ -11,7 +11,7 @@ services:
         VERSION: "release-0.5"
 
   base-nightly:
-    image: quay.io/nvim-lsp/try.nvim:base-nightly
+    image: ${REGISTRY}/${REPO}:base-nightly
     build:
       context: ./base
       dockerfile: Dockerfile
@@ -19,93 +19,125 @@ services:
         VERSION: "master"
 
   stable-c:
-    image: quay.io/nvim-lsp/try.nvim:stable-c
+    image: ${REGISTRY}/${REPO}:stable-c
     build:
       context: ./c
       dockerfile: Dockerfile
       args:
         TAG: "base-stable"
+        REGISTRY: ${REGISTRY}
+        REPO: ${REPO}
 
   nightly-c:
-    image: quay.io/nvim-lsp/try.nvim:nightly-c
+    image: ${REGISTRY}/${REPO}:nightly-c
     build:
       context: ./c
       dockerfile: Dockerfile
+      args:
+        REGISTRY: ${REGISTRY}
+        REPO: ${REPO}
 
   stable-coc:
-    image: quay.io/nvim-lsp/try.nvim:stable-coc
+    image: ${REGISTRY}/${REPO}:coc
     build:
       context: ./coc
       dockerfile: Dockerfile
       args:
         TAG: "base-stable"
+        REGISTRY: ${REGISTRY}
+        REPO: ${REPO}
 
   stable-elixir:
-    image: quay.io/nvim-lsp/try.nvim:stable-elixir
+    image: ${REGISTRY}/${REPO}:stable-elixir
     build:
       context: ./elixir
       dockerfile: Dockerfile
       args:
         TAG: "base-stable"
+        REGISTRY: ${REGISTRY}
+        REPO: ${REPO}
 
   nightly-elixir:
-    image: quay.io/nvim-lsp/try.nvim:nightly-elixir
+    image: ${REGISTRY}/${REPO}:nightly-elixir
     build:
       context: ./elixir
       dockerfile: Dockerfile
+      args:
+        REGISTRY: ${REGISTRY}
+        REPO: ${REPO}
 
   stable-lua:
-    image: quay.io/nvim-lsp/try.nvim:stable-lua
+    image: ${REGISTRY}/${REPO}:stable-lua
     build:
       context: ./lua
       dockerfile: Dockerfile
       args:
-        tag: "base-stable"
+        TAG: "base-stable"
+        REGISTRY: ${REGISTRY}
+        REPO: ${REPO}
 
   nightly-lua:
-    image: quay.io/nvim-lsp/try.nvim:nightly-lua
+    image: ${REGISTRY}/${REPO}:nightly-lua
     build:
       context: ./lua
       dockerfile: Dockerfile
+      args:
+        REGISTRY: ${REGISTRY}
+        REPO: ${REPO}
 
   stable-python:
-    image: quay.io/nvim-lsp/try.nvim:stable-python
+    image: ${REGISTRY}/${REPO}:stable-python
     build:
       context: ./python
       dockerfile: Dockerfile
       args:
-        tag: "base-stable"
+        TAG: "base-stable"
+        REGISTRY: ${REGISTRY}
+        REPO: ${REPO}
 
   nightly-python:
-    image: quay.io/nvim-lsp/try.nvim:nightly-python
+    image: ${REGISTRY}/${REPO}:nightly-python
     build:
       context: ./python
       dockerfile: Dockerfile
+      args:
+        REGISTRY: ${REGISTRY}
+        REPO: ${REPO}
 
   stable-rust:
-    image: quay.io/nvim-lsp/try.nvim:stable-rust
+    image: ${REGISTRY}/${REPO}:stable-rust
     build:
       context: ./rust
       dockerfile: Dockerfile
       args:
         TAG: "base-stable"
+        REGISTRY: ${REGISTRY}
+        REPO: ${REPO}
 
   nightly-rust:
-    image: quay.io/nvim-lsp/try.nvim:nightly-rust
+    image: ${REGISTRY}/${REPO}:nightly-rust
     build:
       context: ./rust
       dockerfile: Dockerfile
+      args:
+        REGISTRY: ${REGISTRY}
+        REPO: ${REPO}
 
   stable-typescript:
-    image: quay.io/nvim-lsp/try.nvim:stable-typescript
+    image: ${REGISTRY}/${REPO}:stable-typescript
     build:
       context: ./typescript
       dockerfile: Dockerfile
       args:
         TAG: "base-stable"
+        REGISTRY: ${REGISTRY}
+        REPO: ${REPO}
 
   nightly-typescript:
-    image: quay.io/nvim-lsp/try.nvim:nightly-typescript
+    image: ${REGISTRY}/${REPO}:nightly-typescript
     build:
       context: ./typescript
       dockerfile: Dockerfile
+      args:
+        REGISTRY: ${REGISTRY}
+        REPO: ${REPO}
