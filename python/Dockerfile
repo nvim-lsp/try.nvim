@@ -1,5 +1,5 @@
 ARG TAG=base-nightly
-FROM try.nvim:$TAG
+FROM quay.io/nvim-lsp/try.nvim:$TAG
 
 # To support kickstart.nvim
 RUN apk --no-cache add \

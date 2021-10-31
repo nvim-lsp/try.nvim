@@ -1,0 +1,111 @@
+version: "3.7"
+
+services:
+
+  base-stable:
+    image: quay.io/nvim-lsp/try.nvim:base-stable
+    build:
+      context: ./base
+      dockerfile: Dockerfile
+      args:
+        VERSION: "release-0.5"
+
+  base-nightly:
+    image: quay.io/nvim-lsp/try.nvim:base-nightly
+    build:
+      context: ./base
+      dockerfile: Dockerfile
+      args:
+        VERSION: "master"
+
+  stable-c:
+    image: quay.io/nvim-lsp/try.nvim:stable-c
+    build:
+      context: ./c
+      dockerfile: Dockerfile
+      args:
+        TAG: "base-stable"
+
+  nightly-c:
+    image: quay.io/nvim-lsp/try.nvim:nightly-c
+    build:
+      context: ./c
+      dockerfile: Dockerfile
+
+  stable-coc:
+    image: quay.io/nvim-lsp/try.nvim:stable-coc
+    build:
+      context: ./coc
+      dockerfile: Dockerfile
+      args:
+        TAG: "base-stable"
+
+  stable-elixir:
+    image: quay.io/nvim-lsp/try.nvim:stable-elixir
+    build:
+      context: ./elixir
+      dockerfile: Dockerfile
+      args:
+        TAG: "base-stable"
+
+  nightly-elixir:
+    image: quay.io/nvim-lsp/try.nvim:nightly-elixir
+    build:
+      context: ./elixir
+      dockerfile: Dockerfile
+
+  stable-lua:
+    image: quay.io/nvim-lsp/try.nvim:stable-lua
+    build:
+      context: ./lua
+      dockerfile: Dockerfile
+      args:
+        tag: "base-stable"
+
+  nightly-lua:
+    image: quay.io/nvim-lsp/try.nvim:nightly-lua
+    build:
+      context: ./lua
+      dockerfile: Dockerfile
+
+  stable-python:
+    image: quay.io/nvim-lsp/try.nvim:stable-python
+    build:
+      context: ./python
+      dockerfile: Dockerfile
+      args:
+        tag: "base-stable"
+
+  nightly-python:
+    image: quay.io/nvim-lsp/try.nvim:nightly-python
+    build:
+      context: ./python
+      dockerfile: Dockerfile
+
+  stable-rust:
+    image: quay.io/nvim-lsp/try.nvim:stable-rust
+    build:
+      context: ./rust
+      dockerfile: Dockerfile
+      args:
+        TAG: "base-stable"
+
+  nightly-rust:
+    image: quay.io/nvim-lsp/try.nvim:nightly-rust
+    build:
+      context: ./rust
+      dockerfile: Dockerfile
+
+  stable-typescript:
+    image: quay.io/nvim-lsp/try.nvim:stable-typescript
+    build:
+      context: ./typescript
+      dockerfile: Dockerfile
+      args:
+        TAG: "base-stable"
+
+  nightly-typescript:
+    image: quay.io/nvim-lsp/try.nvim:nightly-typescript
+    build:
+      context: ./typescript
+      dockerfile: Dockerfile
