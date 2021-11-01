@@ -1,6 +1,10 @@
 ARG TAG=base-stable
 FROM try.nvim:$TAG
 
+# To support kickstart.nvim
+RUN apk --no-cache add \
+    ctags
+
 # Add nodejs dependency for servers
 RUN apk --no-cache add \
     git \
