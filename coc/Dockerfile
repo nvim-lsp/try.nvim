@@ -3,10 +3,7 @@ FROM try.nvim:$TAG
 
 # To support kickstart.nvim
 RUN apk --no-cache add \
-    fd  \
-    ctags \
-    ripgrep \
-    git
+    ctags
 
 # Add nodejs dependency for servers
 RUN apk --no-cache add \
