@@ -30,4 +30,5 @@ jobs:
 
       - name: Build and push images to quay
         run: |
-          bash ./push_all.sh
+          podman-compose -f compose-build.yml build
+          podman-compose push
