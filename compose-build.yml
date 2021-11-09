@@ -3,7 +3,7 @@ version: "3.7"
 services:
 
   base-stable:
-    image: ${REGISTRY}/${REPO}:base-stable
+    image: ${REGISTRY}${REPO}:base-stable
     build:
       context: ./base
       dockerfile: Dockerfile
@@ -11,7 +11,7 @@ services:
         VERSION: "release-0.5"
 
   base-nightly:
-    image: ${REGISTRY}/${REPO}:base-nightly
+    image: ${REGISTRY}${REPO}:base-nightly
     build:
       context: ./base
       dockerfile: Dockerfile
@@ -19,7 +19,7 @@ services:
         VERSION: "master"
 
   stable-c:
-    image: ${REGISTRY}/${REPO}:stable-c
+    image: ${REGISTRY}${REPO}:stable-c
     build:
       context: ./c
       dockerfile: Dockerfile
@@ -29,7 +29,7 @@ services:
         REPO: ${REPO}
 
   nightly-c:
-    image: ${REGISTRY}/${REPO}:nightly-c
+    image: ${REGISTRY}${REPO}:nightly-c
     build:
       context: ./c
       dockerfile: Dockerfile
@@ -37,8 +37,8 @@ services:
         REGISTRY: ${REGISTRY}
         REPO: ${REPO}
 
-  stable-coc:
-    image: ${REGISTRY}/${REPO}:coc
+  coc:
+    image: ${REGISTRY}${REPO}:coc
     build:
       context: ./coc
       dockerfile: Dockerfile
@@ -48,7 +48,7 @@ services:
         REPO: ${REPO}
 
   stable-elixir:
-    image: ${REGISTRY}/${REPO}:stable-elixir
+    image: ${REGISTRY}${REPO}:stable-elixir
     build:
       context: ./elixir
       dockerfile: Dockerfile
@@ -58,7 +58,7 @@ services:
         REPO: ${REPO}
 
   nightly-elixir:
-    image: ${REGISTRY}/${REPO}:nightly-elixir
+    image: ${REGISTRY}${REPO}:nightly-elixir
     build:
       context: ./elixir
       dockerfile: Dockerfile
@@ -67,7 +67,7 @@ services:
         REPO: ${REPO}
 
   stable-lua:
-    image: ${REGISTRY}/${REPO}:stable-lua
+    image: ${REGISTRY}${REPO}:stable-lua
     build:
       context: ./lua
       dockerfile: Dockerfile
@@ -77,7 +77,7 @@ services:
         REPO: ${REPO}
 
   nightly-lua:
-    image: ${REGISTRY}/${REPO}:nightly-lua
+    image: ${REGISTRY}${REPO}:nightly-lua
     build:
       context: ./lua
       dockerfile: Dockerfile
@@ -86,7 +86,7 @@ services:
         REPO: ${REPO}
 
   stable-python:
-    image: ${REGISTRY}/${REPO}:stable-python
+    image: ${REGISTRY}${REPO}:stable-python
     build:
       context: ./python
       dockerfile: Dockerfile
@@ -96,7 +96,7 @@ services:
         REPO: ${REPO}
 
   nightly-python:
-    image: ${REGISTRY}/${REPO}:nightly-python
+    image: ${REGISTRY}${REPO}:nightly-python
     build:
       context: ./python
       dockerfile: Dockerfile
@@ -105,7 +105,7 @@ services:
         REPO: ${REPO}
 
   stable-rust:
-    image: ${REGISTRY}/${REPO}:stable-rust
+    image: ${REGISTRY}${REPO}:stable-rust
     build:
       context: ./rust
       dockerfile: Dockerfile
@@ -115,7 +115,7 @@ services:
         REPO: ${REPO}
 
   nightly-rust:
-    image: ${REGISTRY}/${REPO}:nightly-rust
+    image: ${REGISTRY}${REPO}:nightly-rust
     build:
       context: ./rust
       dockerfile: Dockerfile
@@ -124,7 +124,7 @@ services:
         REPO: ${REPO}
 
   stable-typescript:
-    image: ${REGISTRY}/${REPO}:stable-typescript
+    image: ${REGISTRY}${REPO}:stable-typescript
     build:
       context: ./typescript
       dockerfile: Dockerfile
@@ -134,7 +134,7 @@ services:
         REPO: ${REPO}
 
   nightly-typescript:
-    image: ${REGISTRY}/${REPO}:nightly-typescript
+    image: ${REGISTRY}${REPO}:nightly-typescript
     build:
       context: ./typescript
       dockerfile: Dockerfile
