@@ -28,6 +28,10 @@ jobs:
           password: ${{ env.REGISTRY_PASSWORD }}
           registry: ${{ env.IMAGE_REGISTRY }}
 
+      - name: install podman-compose
+        run: pip3 install https://github.com/containers/podman-compose/archive/devel.tar.gz
+
       - name: Build and push images to quay
         run: |
-          bash ./push_all.sh
+          podman-compose -f compose-build.yml build
+          podman-compose -f compose-build.yml push
