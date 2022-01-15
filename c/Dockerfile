@@ -1,7 +1,6 @@
-ARG REGISTRY
-ARG REPO=try.nvim
+ARG REGISTRY=quay.io
 ARG TAG=base-nightly
-FROM ${REGISTRY}${REPO}:${TAG}
+FROM ${REGISTRY}/nvim-lsp/try.nvim:${TAG}
 
 # To support kickstart.nvim
 RUN apk --no-cache add \

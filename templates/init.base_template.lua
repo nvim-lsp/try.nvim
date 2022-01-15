@@ -21,7 +21,6 @@ require('packer').startup(function()
   use 'ludovicchabant/vim-gutentags' -- Automatic tags management
   -- UI to select things (files, grep results, open buffers...)
   use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use 'mjlbach/onedark.nvim' -- Theme inspired by Atom
   use 'nvim-lualine/lualine.nvim' -- Fancier statusline
   -- Add indentation guides even on blank lines
@@ -132,9 +131,6 @@ require('telescope').setup {
     },
   },
 }
-
--- Enable telescope fzf native
-require('telescope').load_extension 'fzf'
 
 --Add leader shortcuts
 vim.api.nvim_set_keymap('n', '<leader><space>', [[<cmd>lua require('telescope.builtin').buffers()<CR>]], { noremap = true, silent = true })
