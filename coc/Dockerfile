@@ -1,7 +1,5 @@
-ARG REGISTRY
-ARG REPO=try.nvim
-ARG TAG=base-stable
-FROM ${REGISTRY}${REPO}:${TAG}
+ARG TAG=base-nightly
+FROM quay.io/nvim-lsp/try.nvim:${TAG}
 
 # To support kickstart.nvim
 RUN apk --no-cache add \
@@ -38,5 +36,3 @@ RUN mkdir examples && \
     git clone https://github.com/BurntSushi/ripgrep.git
 
 WORKDIR /examples
-
-ENTRYPOINT /bin/sh

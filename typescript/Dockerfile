@@ -30,5 +30,3 @@ RUN git clone https://github.com/typescript-language-server/typescript-language-
     npm install
 
 WORKDIR /typescript-language-server
-
-ENTRYPOINT nvim src/cli.ts
