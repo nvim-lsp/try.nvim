@@ -1,7 +1,5 @@
-ARG REGISTRY
-ARG REPO=try.nvim
 ARG TAG=base-nightly
-FROM ${REGISTRY}${REPO}:${TAG}
+FROM quay.io/nvim-lsp/try.nvim:${TAG}
 
 # To support kickstart.nvim
 RUN apk --no-cache add \
@@ -19,6 +17,7 @@ RUN INSTALL=1 nvim --headless +'autocmd User PackerComplete sleep 100m | qall' +
 # Add a language server (pyright)
 RUN apk --no-cache add \
     nodejs \
+    yarn \
     npm
 
 # Install typescript language server and pyright

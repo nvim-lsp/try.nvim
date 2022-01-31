@@ -2,7 +2,7 @@
 
 -- {% block content %}
 
-require('lspconfig').typescript.setup{
+require('lspconfig').tsserver.setup{
     on_attach = on_attach,
     capabilities = capabilities,
 }
