@@ -227,8 +227,9 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 -- 
 
 require('lspconfig').rust_analyzer.setup{
-    on_attach = on_attach,
-    capabilities = capabilities,
+  cmd = { 'rustup', 'run', 'nightly', 'rust-analyzer' },
+  on_attach = on_attach,
+  capabilities = capabilities,
 }
 
 -- 

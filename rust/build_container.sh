@@ -1,1 +1,1 @@
-podman build -t try.nvim:nightly-rust .
+podman build --no-cache -t try.nvim:nightly-rust .

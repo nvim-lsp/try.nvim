@@ -15,16 +15,22 @@ COPY ./init.lua /root/.config/nvim/init.lua
 RUN INSTALL=1 nvim --headless +'autocmd User PackerComplete qall' +PackerSync
 
 # Install dependencies for rust-analyzer
-RUN apk --no-cache add rust-src curl
+RUN apk --no-cache add curl build-base
 
 # Install rust
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
+# Add rustup to path
+ENV ENV="/root/.profile"
+ENV PATH=$PATH:/root/.cargo/bin
+
 # Install rust-analyzer
-RUN curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > /usr/local/bin/rust-analyzer && \
-    chmod +x /usr/local/bin/rust-analyzer
+RUN rustup default nightly
+RUN rustup +nightly component add rust-analyzer-preview rust-src
 
 # Download example codebases for Rust
 RUN git clone https://github.com/BurntSushi/ripgrep.git
 
 WORKDIR /ripgrep
+
+RUN cargo build
