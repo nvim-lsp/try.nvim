@@ -25,17 +25,12 @@ services:
       dockerfile: Dockerfile
       args:
         TAG: "base-stable"
-        REGISTRY: ${REGISTRY}
-        REPO: ${REPO}
 
   nightly-c:
     image: ${REGISTRY}${REPO}:nightly-c
     build:
       context: ./c
       dockerfile: Dockerfile
-      args:
-        REGISTRY: ${REGISTRY}
-        REPO: ${REPO}
 
   coc:
     image: ${REGISTRY}${REPO}:coc
@@ -62,9 +57,6 @@ services:
     build:
       context: ./elixir
       dockerfile: Dockerfile
-      args:
-        REGISTRY: ${REGISTRY}
-        REPO: ${REPO}
 
   stable-lua:
     image: ${REGISTRY}${REPO}:stable-lua
@@ -73,8 +65,6 @@ services:
       dockerfile: Dockerfile
       args:
         TAG: "base-stable"
-        REGISTRY: ${REGISTRY}
-        REPO: ${REPO}
 
   nightly-lua:
     image: ${REGISTRY}${REPO}:nightly-lua
@@ -92,17 +82,12 @@ services:
       dockerfile: Dockerfile
       args:
         TAG: "base-stable"
-        REGISTRY: ${REGISTRY}
-        REPO: ${REPO}
 
   nightly-python:
     image: ${REGISTRY}${REPO}:nightly-python
     build:
       context: ./python
       dockerfile: Dockerfile
-      args:
-        REGISTRY: ${REGISTRY}
-        REPO: ${REPO}
 
   stable-rust:
     image: ${REGISTRY}${REPO}:stable-rust
@@ -111,17 +96,12 @@ services:
       dockerfile: Dockerfile
       args:
         TAG: "base-stable"
-        REGISTRY: ${REGISTRY}
-        REPO: ${REPO}
 
   nightly-rust:
     image: ${REGISTRY}${REPO}:nightly-rust
     build:
       context: ./rust
       dockerfile: Dockerfile
-      args:
-        REGISTRY: ${REGISTRY}
-        REPO: ${REPO}
 
   stable-typescript:
     image: ${REGISTRY}${REPO}:stable-typescript
@@ -130,14 +110,9 @@ services:
       dockerfile: Dockerfile
       args:
         TAG: "base-stable"
-        REGISTRY: ${REGISTRY}
-        REPO: ${REPO}
 
   nightly-typescript:
     image: ${REGISTRY}${REPO}:nightly-typescript
     build:
       context: ./typescript
       dockerfile: Dockerfile
-      args:
-        REGISTRY: ${REGISTRY}
-        REPO: ${REPO}
