@@ -21,8 +21,8 @@ RUN apk --no-cache add \
     ninja \
     bash
 
-RUN mkdir -p /root/.local/bin && \
-    cd /root/.local/bin &&  \
+RUN mkdir -p /root/.local && \
+    cd /root/.local &&  \
     git clone --recursive https://github.com/sumneko/lua-language-server && \
     cd lua-language-server/3rd/luamake && \
     ./compile/install.sh && \
