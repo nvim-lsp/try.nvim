@@ -3,7 +3,7 @@
 -- {% block content %}
 
 local elixir_ls_bin = "/elixir-ls/language_server.sh"
-nvim_lsp['elixirls' ].setup{
+require('lspconfig').elixirls.setup{
     cmd = {elixir_ls_bin},
     on_attach = on_attach,
     capabilities = capabilities,
