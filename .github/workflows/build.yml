@@ -33,5 +33,5 @@ jobs:
 
       - name: Build and push images to quay
         run: |
-          podman-compose -f compose-build.yml build
-          podman-compose -f compose-build.yml push
+          podman-compose build
+          podman-compose push
