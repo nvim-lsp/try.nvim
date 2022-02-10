@@ -3,7 +3,10 @@ FROM quay.io/nvim-lsp/try.nvim:${TAG}
 
 # To support kickstart.nvim
 RUN apk --no-cache add \
-    ctags
+    fd  \
+    ctags \
+    ripgrep \
+    git
 
 # Add nodejs dependency for servers
 RUN apk --no-cache add \
@@ -18,7 +21,7 @@ RUN npm i -g typescript yarn
 COPY ./init.lua /root/.config/nvim/init.lua
 
 # Install the kickstart.nvim dependencies, INSTALL env var is a hack
-RUN INSTALL=1 nvim --headless +'autocmd User PackerComplete sleep 100m | qall' +PackerSync
+RUN INSTALL=1 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
 # Install clangd
 RUN apk --no-cache add \

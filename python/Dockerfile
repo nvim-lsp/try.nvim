@@ -1,7 +1,5 @@
-ARG REGISTRY
-ARG REPO=try.nvim
 ARG TAG=base-nightly
-FROM ${REGISTRY}${REPO}:${TAG}
+FROM quay.io/nvim-lsp/try.nvim:${TAG}
 
 # To support kickstart.nvim
 RUN apk --no-cache add \
@@ -14,7 +12,7 @@ RUN apk --no-cache add \
 COPY ./init.lua /root/.config/nvim/init.lua
 
 # Install the kickstart.nvim dependencies, INSTALL env var is a hack
-RUN INSTALL=1 nvim --headless +'autocmd User PackerComplete qall' +PackerSync
+RUN INSTALL=1 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
 # Add a language server (pyright)
 RUN apk --no-cache add \
