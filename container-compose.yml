@@ -116,3 +116,18 @@ services:
     build:
       context: ./typescript
       dockerfile: Dockerfile
+
+  stable-julia:
+    image: ${REGISTRY}${REPO}:stable-julia
+    build:
+      context: ./julia
+      dockerfile: Dockerfile
+      args:
+        TAG: "base-stable"
+
+  nightly-julia:
+    image: ${REGISTRY}${REPO}:nightly-julia
+    build:
+      context: ./julia
+      dockerfile: Dockerfile
+
