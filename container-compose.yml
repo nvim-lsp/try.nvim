@@ -8,7 +8,7 @@ services:
       context: ./base
       dockerfile: Dockerfile
       args:
-        VERSION: "release-0.6"
+        VERSION: "release-0.7"
 
   base-nightly:
     image: ${REGISTRY}${REPO}:base-nightly
